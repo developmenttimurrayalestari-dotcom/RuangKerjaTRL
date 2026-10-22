@@ -1,0 +1,140 @@
+{
+  "divisions": [
+    {
+      "id": "div-production",
+      "code": "PRODUCTION",
+      "name": "Divisi Produksi",
+      "sortOrder": 1,
+      "active": true
+    },
+    {
+      "id": "div-back-office",
+      "code": "BACK_OFFICE",
+      "name": "Divisi Back Office",
+      "sortOrder": 2,
+      "active": true
+    }
+  ],
+  "workUnits": [
+    {
+      "id": "unit-surfacing",
+      "divisionId": "div-production",
+      "code": "SURFACING",
+      "name": "Surfacing",
+      "sortOrder": 1,
+      "active": true
+    },
+    {
+      "id": "unit-warehouse-lab",
+      "divisionId": "div-production",
+      "code": "WAREHOUSE_LAB",
+      "name": "Warehouse LAB",
+      "sortOrder": 2,
+      "active": true
+    },
+    {
+      "id": "unit-coating",
+      "divisionId": "div-production",
+      "code": "COATING",
+      "name": "Coating",
+      "sortOrder": 3,
+      "active": true
+    },
+    {
+      "id": "unit-quality-control",
+      "divisionId": "div-production",
+      "code": "QUALITY_CONTROL",
+      "name": "Quality Control",
+      "sortOrder": 4,
+      "active": true
+    },
+    {
+      "id": "unit-delivery",
+      "divisionId": "div-production",
+      "code": "DELIVERY",
+      "name": "Delivery",
+      "sortOrder": 5,
+      "active": true
+    },
+    {
+      "id": "unit-admin-sales",
+      "divisionId": "div-back-office",
+      "code": "ADMIN_SALES",
+      "name": "Admin Sales",
+      "sortOrder": 1,
+      "active": true
+    },
+    {
+      "id": "unit-marketing",
+      "divisionId": "div-back-office",
+      "code": "MARKETING",
+      "name": "Marketing",
+      "sortOrder": 2,
+      "active": true
+    },
+    {
+      "id": "unit-sales",
+      "divisionId": "div-back-office",
+      "code": "SALES",
+      "name": "Sales",
+      "sortOrder": 3,
+      "active": true
+    },
+    {
+      "id": "unit-customer-service",
+      "divisionId": "div-back-office",
+      "code": "CUSTOMER_SERVICE",
+      "name": "Customer Service",
+      "sortOrder": 4,
+      "active": true
+    },
+    {
+      "id": "unit-accounting-tax",
+      "divisionId": "div-back-office",
+      "code": "ACCOUNTING_TAX",
+      "name": "Accounting dan Tax",
+      "sortOrder": 5,
+      "active": true
+    },
+    {
+      "id": "unit-hr-general-affair",
+      "divisionId": "div-back-office",
+      "code": "HR_GENERAL_AFFAIR",
+      "name": "HR & General Affair",
+      "sortOrder": 6,
+      "active": true
+    },
+    {
+      "id": "unit-it",
+      "divisionId": "div-back-office",
+      "code": "IT",
+      "name": "IT",
+      "sortOrder": 7,
+      "active": true
+    },
+    {
+      "id": "unit-ar-finance",
+      "divisionId": "div-back-office",
+      "code": "AR_FINANCE",
+      "name": "Account Receiveable & Finance",
+      "sortOrder": 8,
+      "active": true
+    },
+    {
+      "id": "unit-purchasing",
+      "divisionId": "div-back-office",
+      "code": "PURCHASING",
+      "name": "Purchasing",
+      "sortOrder": 9,
+      "active": true
+    },
+    {
+      "id": "unit-warehouse-goods",
+      "divisionId": "div-back-office",
+      "code": "WAREHOUSE_GOODS",
+      "name": "Warehouse Goods",
+      "sortOrder": 10,
+      "active": true
+    }
+  ]
+}

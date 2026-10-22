@@ -1,0 +1,17 @@
+'use client';
+import {useEffect,useRef, type ReactNode} from 'react';
+import {X,ArrowUpRight,Inbox,LoaderCircle} from 'lucide-react';
+import {initials,statusLabel} from './utils';
+export function Avatar({name,size='normal'}:{name:string;size?:string}){const hues=['green','purple','ochre','blue','rose'];const h=Array.from(name).reduce((a,c)=>a+c.charCodeAt(0),0)%5;return <span className={`avatar avatar-${size} avatar-${hues[h]}`}>{initials(name||'Karyawan')}</span>;}
+export function Badge({status}:{status:string}){return <span className={`badge badge-${status}`}><i/>{statusLabel[status]||status}</span>;}
+export function Empty({title='Belum ada data',description='Data akan tampil di sini setelah ditambahkan.',action}:{title?:string;description?:string;action?:ReactNode}){return <div className="empty"><span><Inbox size={24}/></span><h3>{title}</h3><p>{description}</p>{action}</div>;}
+export function Panel({title,subtitle,action,children,className=''}:{title?:string;subtitle?:string;action?:ReactNode;children:ReactNode;className?:string}){return <section className={`panel ${className}`}>{title&&<div className="panel-head"><div><h2>{title}</h2>{subtitle&&<p>{subtitle}</p>}</div>{action}</div>}{children}</section>;}
+export function LinkButton({children,onClick}:{children:ReactNode;onClick:()=>void}){return <button className="text-button" onClick={onClick}>{children}<ArrowUpRight size={15}/></button>;}
+export function Spinner(){return <LoaderCircle className="spin" size={18}/>;}
+export function Modal({title,subtitle,children,onClose,wide=false}:{title:string;subtitle?:string;children:ReactNode;onClose:()=>void;wide?:boolean}){
+  const ref=useRef<HTMLDivElement>(null);const close=useRef(onClose);
+  useEffect(()=>{close.current=onClose;},[onClose]);
+  useEffect(()=>{const prev=document.activeElement as HTMLElement|null;const old=document.body.style.overflow;document.body.style.overflow='hidden';ref.current?.focus();const handle=(e:KeyboardEvent)=>{if(e.key==='Escape')close.current();if(e.key==='Tab'){const els=ref.current?.querySelectorAll<HTMLElement>('button:not([disabled]),a[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex="0"]');if(!els?.length)return;const first=els[0],last=els[els.length-1];if(e.shiftKey&&(document.activeElement===first||document.activeElement===ref.current)){e.preventDefault();last.focus();}else if(!e.shiftKey&&(document.activeElement===last||document.activeElement===ref.current)){e.preventDefault();first.focus();}}};document.addEventListener('keydown',handle);return()=>{document.body.style.overflow=old;document.removeEventListener('keydown',handle);prev?.focus();};},[]);
+  return <div className="modal-backdrop" onMouseDown={e=>{if(e.target===e.currentTarget)onClose();}}><div role="dialog" aria-modal="true" aria-labelledby="dialog-title" tabIndex={-1} ref={ref} className={`modal ${wide?'modal-wide':''}`}><div className="modal-head"><div><span className="eyebrow">RUANGKERJA</span><h2 id="dialog-title">{title}</h2>{subtitle&&<p>{subtitle}</p>}</div><button className="icon-button" onClick={onClose} aria-label="Tutup dialog"><X size={21}/></button></div>{children}</div></div>;
+}
+export function Field({label,children,hint,full=false}:{label:string;children:ReactNode;hint?:string;full?:boolean}){return <label className={`field ${full?'full':''}`}><span>{label}</span>{children}{hint&&<small>{hint}</small>}</label>;}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">RuangKerja</title>
+  <rect width="512" height="512" fill="#f5f6f4"/>
+  <g fill="#174b3b">
+    <rect x="128" y="128" width="116" height="116" rx="28"/>
+    <rect x="268" y="128" width="116" height="116" rx="28"/>
+    <rect x="128" y="268" width="116" height="116" rx="28"/>
+    <rect x="268" y="268" width="116" height="116" rx="28"/>
+  </g>
+</svg>
